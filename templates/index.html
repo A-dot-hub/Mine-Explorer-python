@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine Explorer - Strategic Bomb Detection Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+       
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1 class="game-title">Mine Explorer!</h1>
+            </div>
+            <button class="hamburger-menu" id="hamburger-menu">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </header>
+
+        
+        <div class="nav-overlay" id="nav-overlay"></div>
+        <nav class="nav-menu" id="nav-menu">
+            <button class="nav-close" id="nav-close">&times;</button>
+            <div class="nav-links">
+                <a href="#" class="nav-link" id="about-link">About Me</a>
+                <a href="#" class="nav-link" id="contact-link">Contact Us</a>
+                <a href="#" class="nav-link" id="new-journey-link">New Journey</a>
+                <a href="#" class="nav-link" id="reset-journey-link">Reset Journey</a>
+            </div>
+            <div class="nav-footer">
+                <p>Navigate carefully, explorer!</p>
+            </div>
+        </nav>
+
+  
+        <div class="game-stats">
+            <div class="stat">
+                <span class="stat-label">Traps</span>
+                <span class="stat-value" id="bomb-count">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Steps</span>
+                <span class="stat-value" id="score">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Time</span>
+                <span class="stat-value" id="timer">00:00</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Status</span>
+                <span class="stat-value" id="game-status">Ready</span>
+            </div>
+        </div>
+
+       
+        <div class="game-controls">
+            <div class="level-selector">
+                <label for="level">Difficulty:</label>
+                <select id="level">
+                    <option value="beginner">Explorer (4×4)</option>
+                    <option value="intermediate">Scout (5×5)</option>
+                    <option value="advanced">Adventurer (6×6)</option>
+                    <option value="expert">Master (10×10)</option>
+                </select>
+            </div>
+
+            <button id="new-game-btn" class="btn btn-primary">New Adventure</button>
+      
+            <button id="reset-btn" class="btn btn-secondary">Reset Journey</button>
+        </div>
+
+       
+        <div class="game-board-container">
+            <div id="game-board" class="game-board"></div>
+        </div>
+
+      
+        <div id="victory-modal" class="victory-modal hidden">
+            <div class="victory-content">
+                <h2>Victory Achieved!</h2>
+                <p>You successfully navigated to the treasure!</p>
+                <div class="victory-stats">
+                    <div>Steps: <span id="final-steps">0</span></div>
+                    <div>Time: <span id="final-time">00:00</span></div>
+                </div>
+                
+                <div style="display: flex; gap: 12px; justify-content: center;">
+                    <button id="play-again-btn" class="btn btn-primary">New Journey</button>
+                    <button class="btn btn-highlight" onclick="game.resetGame(); game.hideVictoryModal()">Reset
+                        Journey</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <h3>How to Play</h3>
+            <ul>
+                <li>Start from the village (top-left corner)</li>
+                <li>Navigate to the castle (bottom-right corner) to win</li>
+                <li>Left click to explore adjacent tiles</li>
+                <li>Right click to flag suspected traps</li>
+                <li>Numbers indicate nearby trap count</li>
+                <li>Avoid the hidden mines to complete your journey</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
