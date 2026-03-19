@@ -1,7 +1,7 @@
 💣 Mine-Explorer (Python + N-Queens)
 
 Mine-Explorer is a unique puzzle game that merges the classic Minesweeper experience with the N-Queens algorithm. Unlike traditional Minesweeper, where bombs are randomly scattered, here the bombs are placed intelligently so that no two bombs share the same row, column, or diagonal. This makes the game both challenging and algorithmically interesting.
-
+ 
 🧩 Gameplay
 
 The game starts with a grid (default 8×8, but easily customizable). 
