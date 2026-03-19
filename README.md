@@ -4,7 +4,7 @@ Mine-Explorer is a unique puzzle game that merges the classic Minesweeper experi
 
 🧩 Gameplay
 
-The game starts with a grid (default 8×8, but easily customizable).
+The game starts with a grid (default 8×8, but easily customizable). 
 
 Bombs are positioned using the N-Queens problem solution, ensuring a fair but tricky distribution.
 
